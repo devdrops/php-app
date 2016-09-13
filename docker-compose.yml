@@ -3,7 +3,7 @@ services:
   nginx:
     image: shippingdocker/nginx:latest
     ports:
-     - "80:80"
+     - "777:80"
     volumes:
      - ./application:/var/www/html
     networks:
@@ -29,6 +29,8 @@ services:
      - data:/var/lib/mysql
     networks:
      - appnet
+    ports:
+     - "3307:3306"
 networks:
   appnet:
     driver: "bridge"
